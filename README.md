@@ -27,6 +27,3 @@ Persist across app restarts.
 AI was used for:
 - Project scaffolding
 - Architecture guidance
-- Boilerplate generation
-
-Business logic and structure implemented by developer.
