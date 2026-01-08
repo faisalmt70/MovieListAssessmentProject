@@ -20,7 +20,6 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             AssessmentProjectTheme {
-
                 val navController = rememberNavController()
 
                 Surface(
