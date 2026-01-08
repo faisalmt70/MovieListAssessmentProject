@@ -19,11 +19,13 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.assessmentproject.R
-import com.example.assessmentproject.presentation.components.MovieDetailsContent
+import com.example.assessmentproject.presentation.components.MovieDetailsView
 import com.example.assessmentproject.presentation.viewmodel.MovieDetailsViewModel
 import com.example.assessmentproject.util.UiState
 
@@ -71,7 +73,7 @@ fun MovieDetailsScreen(
                 is UiState.Success -> {
                     val movie = state.data
 
-                    MovieDetailsContent(
+                    MovieDetailsView(
                         movie = movie,
                         onFavoriteClick = {
                             viewModel.toggleFavorite(movie)
@@ -81,4 +83,10 @@ fun MovieDetailsScreen(
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun previewScreen(){
+    MovieDetailsScreen(movieId = "1", navController = NavController(LocalContext.current))
 }

@@ -16,23 +16,20 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.assessmentproject.data.model.MovieModel
 
 @Composable
-fun MovieItem(
+fun MovieItemView(
     movie: MovieModel,
     onClick: () -> Unit,
     onFavorite: () -> Unit
 ) {
     Card(modifier = Modifier.padding(8.dp).fillMaxWidth().clickable(onClick = onClick)) {
         Row {
-            AsyncImage(
-                model = movie.image,
-                contentDescription = null,
-                modifier = Modifier.size(100.dp)
-            )
+            AsyncImage(model = movie.image, contentDescription = null, modifier = Modifier.size(100.dp))
             Column(modifier = Modifier.padding(8.dp)) {
                 Text(movie.title, fontWeight = FontWeight.Bold)
                 Text(movie.releaseYear)
@@ -42,4 +39,10 @@ fun MovieItem(
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun itemView(){
+    MovieItemView(movie = MovieModel("1", "Spiderman", "", "This is movie description", "2024", false), onClick = {}, onFavorite = {})
 }

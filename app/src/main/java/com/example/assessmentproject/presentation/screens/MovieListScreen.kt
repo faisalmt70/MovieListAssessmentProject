@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.example.assessmentproject.R
-import com.example.assessmentproject.presentation.components.MovieItem
+import com.example.assessmentproject.presentation.components.MovieItemView
 import com.example.assessmentproject.presentation.viewmodel.MovieListViewModel
 import com.example.assessmentproject.util.UiState
 
@@ -33,7 +33,7 @@ fun MovieListScreen(
         topBar = {
             TopAppBar(
                 title = {
-                    Text(text = stringResource(R.string.movie_app),
+                    Text(text = stringResource(R.string.app_name),
                         modifier = Modifier.fillMaxWidth(),
                         textAlign = TextAlign.Center
                     )
@@ -83,7 +83,7 @@ fun MovieListScreen(
 
                         LazyColumn {
                             items(moviesToShow) { movie ->
-                                MovieItem(
+                                MovieItemView(
                                     movie = movie,
                                     onClick = { navController.navigate("details/${movie.id}") },
                                     onFavorite = { viewModel.toggleFavorite(movie) }

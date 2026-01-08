@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Assessment Project</string>
-    <string name="movie_app">Movie App</string>
+    <string name="app_name">Movie List App</string>
     <string name="all">All</string>
     <string name="favorites">Favorites</string>
     <string name="error_loading_movies">Error loading movies</string>

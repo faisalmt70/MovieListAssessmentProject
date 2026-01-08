@@ -21,13 +21,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.assessmentproject.data.model.MovieModel
 
 @Composable
-fun MovieDetailsContent(movie: MovieModel, onFavoriteClick: () -> Unit) {
+fun MovieDetailsView(movie: MovieModel, onFavoriteClick: () -> Unit) {
     Column(modifier = Modifier.verticalScroll(rememberScrollState()).padding(16.dp)) {
 
         AsyncImage(model = movie.image, contentDescription = null, modifier = Modifier.fillMaxWidth().height(260.dp), contentScale = ContentScale.Crop)
@@ -51,4 +52,10 @@ fun MovieDetailsContent(movie: MovieModel, onFavoriteClick: () -> Unit) {
 
         Text(text = movie.description, style = MaterialTheme.typography.bodyLarge, lineHeight = 22.sp)
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun previewDetailsView(){
+    MovieDetailsView(movie = MovieModel("1", "Spiderman", "", "This is movie description", "2024", false), onFavoriteClick = {})
 }
