@@ -43,12 +43,7 @@ fun MovieListScreen(
                 ))
         },
         content = { padding ->
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(padding)
-                    .padding(16.dp)
-            ) {
+            Column(modifier = Modifier.fillMaxSize().padding(padding).padding(vertical = 10.dp, horizontal = 5.dp)) {
                 Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
                     Button(onClick = { showFavorites = false }, colors = ButtonDefaults.buttonColors(
                             containerColor = if (!showFavorites) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.secondary)) {
@@ -77,9 +72,7 @@ fun MovieListScreen(
                         }
                     }
                     is UiState.Success -> {
-                        val moviesToShow = if (showFavorites) {
-                            state.data.filter { it.isFavorite }
-                        } else state.data
+                        val moviesToShow = if (showFavorites) { state.data.filter { it.isFavorite } } else state.data
 
                         LazyColumn {
                             items(moviesToShow) { movie ->
