@@ -1,16 +1,13 @@
 package com.example.assessmentproject.data.repository
 
-import com.example.assessmentproject.data.database.dao.MovieDao
-import com.example.assessmentproject.data.database.entity.MovieEntity
+import com.example.assessmentproject.data.databass.dao.MovieDao
+import com.example.assessmentproject.data.databass.entity.MovieEntity
 import com.example.assessmentproject.data.model.MovieModel
 import com.example.assessmentproject.data.remote.interfaces.GhibliApiService
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
-class MovieRepository @Inject constructor(
-    private val api: GhibliApiService,
-    private val dao: MovieDao
-) {
+class MovieRepository @Inject constructor(private val api: GhibliApiService, private val dao: MovieDao) {
     suspend fun getMovies(): List<MovieModel> {
         val favoriteIds = dao.getFavorites().first().map { it.id }.toSet()
 
@@ -34,5 +31,4 @@ class MovieRepository @Inject constructor(
         }
     }
 }
-
 private fun MovieModel.toEntity() = MovieEntity(id, title, image, description, releaseYear)
