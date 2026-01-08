@@ -1,11 +1,11 @@
-package com.example.assessmentproject.data.databass.dao
+package com.example.assessmentproject.data.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.assessmentproject.data.databass.entity.MovieEntity
+import com.example.assessmentproject.data.database.entity.MovieEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao

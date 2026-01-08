@@ -1,7 +1,7 @@
 package com.example.assessmentproject.data.repository
 
-import com.example.assessmentproject.data.databass.dao.MovieDao
-import com.example.assessmentproject.data.databass.entity.MovieEntity
+import com.example.assessmentproject.data.database.dao.MovieDao
+import com.example.assessmentproject.data.database.entity.MovieEntity
 import com.example.assessmentproject.data.model.MovieModel
 import com.example.assessmentproject.data.remote.interfaces.GhibliApiService
 import kotlinx.coroutines.flow.first

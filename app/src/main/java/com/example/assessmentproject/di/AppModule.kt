@@ -2,7 +2,7 @@ package com.example.assessmentproject.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.assessmentproject.data.databass.instance.AppDatabase
+import com.example.assessmentproject.data.database.instance.AppDatabase
 import com.example.assessmentproject.data.remote.interfaces.GhibliApiService
 import dagger.Module
 import dagger.Provides
